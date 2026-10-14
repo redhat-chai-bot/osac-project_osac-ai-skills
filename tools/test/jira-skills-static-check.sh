@@ -244,10 +244,10 @@ test_report_bug_requires_component() {
     | rg -q '\-\-component "\$\{COMPONENT\}"' \
     || fail "report-bug: jira issue create must include --component \"\${COMPONENT}\""
   awk '/^## Confirm Before Creating$/{s=1;next} s&&/^## /{exit} s{print}' "$skill" \
-    | rg -q 'Component:' \
+    | rg -q 'Component:\s+<COMPONENT>' \
     || fail "report-bug: confirm gate must show Component"
   awk '/^## Report$/{s=1;next} s&&/^## /{exit} s{print}' "$skill" \
-    | rg -q 'Component:' \
+    | rg -q 'Component:\s+<COMPONENT>' \
     || fail "report-bug: final report must show Component"
   awk '/^## Resolve Component$/{s=1;next} s&&/^## /{exit} s{print}' "$skill" \
     | rg -q 'list_component_suggestions' \
