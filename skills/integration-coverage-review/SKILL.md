@@ -61,11 +61,11 @@ coverage comes from its own documentation. Locate and read:
 - The affected component's own `AGENTS.md` — its touched-area map and
   integration-testing section.
 
-This review checks coverage of changed boundaries. It does not request
-updates to the testing guide or suite guides — those guides change only
-when commands, prerequisites, dependency boundaries, coverage scope or
-tracked gaps change, not when routine tests are added within an existing
-suite.
+This review checks coverage of changed boundaries. When a change alters
+commands, prerequisites, dependency boundaries, coverage scope or tracked
+gaps in a way that leaves relevant guide text stale or incorrect, flag
+the affected guidance as a finding. Routine test additions within an
+existing suite do not by themselves justify a guide-edit finding.
 
 **Repos without OSAC integration-testing documentation are out of scope.**
 If the consumer repo has no `docs/INTEGRATION-TESTING.md` and no component
